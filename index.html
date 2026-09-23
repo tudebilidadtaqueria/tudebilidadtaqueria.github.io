@@ -140,6 +140,8 @@ h1.logoh{transform:none;line-height:0;margin:0}
 .logo{width:min(230px,60vw);height:auto;display:block;margin:10px auto;border-radius:50%;box-shadow:0 0 0 4px var(--red),0 8px 20px rgba(0,0,0,.28)}
 @media (min-width:960px){.logo{width:260px}}
 @media (prefers-reduced-motion:no-preference){h1.logoh{animation:lpop .6s ease-out}@keyframes lpop{from{transform:scale(.85);opacity:0}}}
+html,body{overscroll-behavior-y:none}
+.bar::after{content:"";position:absolute;left:0;right:0;top:100%;height:100vh;background:inherit}
 </style>
 <script>
 (function(){try{var t=localStorage.getItem("tdt-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();
@@ -200,11 +202,11 @@ const P=(es,en)=>({es,en});
 const PA=P("Pastor","Al Pastor"),PO=P("Pollo","Chicken"),AS=P("Asada","Steak (Asada)");
 const M=[
  {id:"birria",t:P("Birria","Birria"),items:[
-  {n:P("Pizza Birria","Birria Pizza"),fav:1,d:P("Queso, birria, cebolla y cilantro, con consomé. Ideal para compartir.","Cheese, birria, onion and cilantro, served with consommé. Great for sharing."),v:[["",29.99]]},
-  {n:P("Birria Tacos","Birria Tacos"),d:P("3 piezas con cebolla, cilantro, limón, consomé y queso.","3 tacos with onion, cilantro, lime, consommé and cheese."),v:[["",13.99]]},
+  {n:P("Pizza Birria","Birria Pizza"),fav:1,d:P("Queso, birria, cebolla y cilantro, con consomé. Ideal para compartir.","Cheese, birria, onion and cilantro, served with consomé. Great for sharing."),v:[["",29.99]]},
+  {n:P("Birria Tacos","Birria Tacos"),d:P("3 piezas con cebolla, cilantro, limón, consomé y queso.","3 tacos with onion, cilantro, lime, consomé and cheese."),v:[["",13.99]]},
   {n:P("Ramen de Birria","Birria Ramen"),v:[[P("Mediano","Medium"),14.00],[P("Grande","Large"),16.99]]}]},
  {id:"tacos",t:P("Tacos","Tacos"),items:[
-  {n:P("Tacos Mexicanos","Mexican Street Tacos"),d:P("3 tacos con cebolla, cilantro y limón.","3 tacos with onion, cilantro and lime."),v:[[PA,9],[PO,9],[AS,9],[P("Chorizo","Chorizo"),12],[P("Tripa","Tripe"),12],[P("Lengua","Beef Tongue"),12]]},
+  {n:P("Tacos Mexicanos","Mexican Street Tacos"),d:P("3 tacos con cebolla, cilantro y limón.","3 tacos with onion, cilantro and lime."),v:[[PA,9],[PO,9],[AS,9],[P("Chorizo","Chorizo"),12],[P("Tripa","Tripa (beef intestine)"),12],[P("Lengua","Beef Tongue"),12]]},
   {n:P("Tacos Dorados o Flautas","Crispy Tacos or Flautas"),d:P("3 piezas con lechuga, crema y queso rallado.","3 pieces topped with lettuce, crema and shredded cheese."),v:[[PO,12.99],[P("Res","Beef"),12.99]]}]},
  {id:"quesadillas",t:P("Quesadillas","Quesadillas"),items:[
   {n:P("Quesadilla","Quesadilla"),v:[[PA,12.99],[PO,12.99],[AS,12.99],[P("Chorizo","Chorizo"),16.99],[P("Lengua","Beef Tongue"),16.99],[P("Quesabirria","Quesabirria"),16.99]]}]},
@@ -223,9 +225,9 @@ const M=[
  {id:"postres",t:P("Postres","Desserts"),items:[
   {n:P("Arroz con leche","Arroz con Leche (Rice Pudding)"),v:[["",5.00]]},{n:P("Flan","Flan"),v:[["",5.00]]}]},
  {id:"bebidas",t:P("Bebidas","Drinks"),items:[
-  {n:P("Agua fresca","Agua Fresca"),v:[[P("Horchata","Horchata"),4],[P("Jamaica","Jamaica (Hibiscus)"),4],[P("Tamarindo","Tamarind"),4]]},
+  {n:P("Agua fresca","Aguas Frescas"),v:[[P("Horchata","Horchata"),4],[P("Jamaica","Jamaica (Hibiscus)"),4],[P("Tamarindo","Tamarind"),4]]},
   {n:P("Jugo de mango","Mango Juice"),v:[["",3]]},
-  {n:P("Coca-Cola de botella","Bottled Coca-Cola"),v:[["",4]]},
+  {n:P("Coca-Cola de botella","Mexican Coke"),v:[["",4]]},
   {n:P("Jarritos","Jarritos"),v:[[P("Tamarindo","Tamarind"),3],[P("Mandarina","Mandarin"),3]]},
   {n:P("Soda de lata","Canned Soda"),v:[[P("Coca-Cola","Coca-Cola"),2],[P("Coca-Cola Zero","Coca-Cola Zero"),2],[P("Sprite","Sprite"),2],[P("Jupiña","Jupiña (Pineapple)"),2]]},{n:P("Agua","Bottled Water"),v:[["",1.5]]}]}
 ];
